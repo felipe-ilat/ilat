@@ -142,9 +142,8 @@
 
       </div>
       <a 
-        href="https://wa.me/50672265435?text=Hola%20quiero%20una%20sesión%20de%20consultoría%20para%20evaluar%20qué%20nivel%20de%20servicio%20de%20ílát%20aplica%20mejor%20para%20mi%20negocio"
+        href=""
         class="btn btn-primary"
-        target="_blank"
       >
         Contáctanos
       </a>
@@ -232,13 +231,13 @@
         <div class="use-case-card">
           <h3>Control automático de gastos</h3>
           <p class="use-case-text">Procesamos facturas recibidas por correo y notificamos el gasto total sin intervención manual.</p><br>
-          <button class="btn btn-primary" onclick="openLightbox()">Ver Demo</button>
-          <p class="use-case-text">Menos errores y hasta 80% menos tiempo en la gestión de gastos.</p>
+          <button class="btn btn-primary" onclick="openLightbox('gastos-demo.mov')">Ver Demo</button>
+          <p class="use-case-text">Menos errores y hasta 90% menos tiempo en la gestión de gastos.</p>
         </div>
         <div class="use-case-card">
           <h3>Recordatorios automáticos de citas</h3>
           <p class="use-case-text">Detectamos citas del día y enviamos recordatorios automáticos a cada paciente.</p><br>
-          <button class="btn btn-primary" onclick="openLightbox()">Ver Demo</button>
+          <button class="btn btn-primary" onclick="openLightbox('agenda-demo.mov')">Ver Demo</button>
           <p class="use-case-text">Mayor asistencia a citas, sin esfuerzo operativo y con mejor experiencia del paciente.</p>
         </div>
       </div>
@@ -322,9 +321,7 @@
       </div>
       <div style="text-align: center; margin-top: 50px;">
         <a 
-        href="https://wa.me/50672265435?text=Hola%20quiero%20una%20sesión%20de%20consultoría%20para%20evaluar%20qué%20nivel%20de%20servicio%20de%20ílát%20aplica%20mejor%20para%20mi%20negocio"
         class="btn btn-primary"
-        target="_blank"
         >
           Quiero una sesión de consultoría
         </a>
@@ -353,7 +350,8 @@
     const lightbox = document.getElementById('videoLightbox');
     const video = document.getElementById('demoVideo');
 
-    function openLightbox() {
+    function openLightbox(videoSrc) {
+      video.src = videoSrc;
       lightbox.classList.add('active');
       video.play();
     }
@@ -361,7 +359,7 @@
     function closeLightbox() {
       lightbox.classList.remove('active');
       video.pause();
-      video.currentTime = 0; // Resets video to start
+      video.currentTime = 0;
     }
 
     // Accessibility: Close with "Escape" key
